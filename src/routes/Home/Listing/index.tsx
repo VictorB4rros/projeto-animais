@@ -31,7 +31,7 @@ export default function Listing() {
     useEffect(() => {
         animalService.findAll()
             .then(response => {
-                const incomingAnimals = response.data.content || [];
+                const incomingAnimals = response.data || [];
                 setAnimals(incomingAnimals);
             });
     }, [refreshKey]);

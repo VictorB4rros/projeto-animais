@@ -1,16 +1,28 @@
 {
   "animais": [
     {
-      "id": "1",
       "nome": "Tropeço",
       "especie": "Cachorro",
       "raca": "Vira-lata",
       "idade": 5,
       "porte": "Médio",
       "sexo": "Masculino",
-      "pelagem": "Caramelo",
+      "pelagem": "Preto",
       "vacinado": "Sim",
-      "vermifugado": "Sim"
+      "vermifugado": "Sim",
+      "id": "1"
+    },
+    {
+      "nome": "Bob",
+      "especie": "Cachorro",
+      "raca": "Vira-lata",
+      "idade": "7",
+      "porte": "Médio",
+      "sexo": "Masculino",
+      "pelagem": "Caramelo",
+      "vacinado": "Não",
+      "vermifugado": "Não",
+      "id": "heEDVnDxeGo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
