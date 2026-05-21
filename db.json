@@ -1,0 +1,17 @@
+{
+  "animais": [
+    {
+      "id": "1",
+      "nome": "Tropeço",
+      "especie": "Cachorro",
+      "raca": "Vira-lata",
+      "idade": 5,
+      "porte": "Médio",
+      "sexo": "Masculino",
+      "pelagem": "Caramelo",
+      "vacinado": "Sim",
+      "vermifugado": "Sim"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

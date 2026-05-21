@@ -1,0 +1,22 @@
+#animal-form-section {
+    padding: 20px 0;
+}
+
+.animal-form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.animal-form-buttons {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+@media(min-width: 576px) {
+    #animal-form-section {
+        padding: 40px 0;
+    }
+}

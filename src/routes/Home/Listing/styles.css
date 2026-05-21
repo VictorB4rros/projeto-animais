@@ -1,0 +1,10 @@
+#animal-listing-section {
+    padding: 20px 0;
+}
+
+.animal-listing-btn {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+    margin: 5px;
+}
