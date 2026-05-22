@@ -4,7 +4,7 @@
       "nome": "Tropeço",
       "especie": "Cachorro",
       "raca": "Vira-lata",
-      "idade": 5,
+      "idade": "4",
       "porte": "Médio",
       "sexo": "Masculino",
       "pelagem": "Preto",
@@ -23,6 +23,54 @@
       "vacinado": "Não",
       "vermifugado": "Não",
       "id": "heEDVnDxeGo"
+    },
+    {
+      "nome": "Tom",
+      "especie": "Gato",
+      "raca": "",
+      "idade": "6",
+      "porte": "Pequeno",
+      "sexo": "Masculino",
+      "pelagem": "Cinza",
+      "vacinado": "Sim",
+      "vermifugado": "Sim",
+      "id": "1yD8T4fZEpM"
+    },
+    {
+      "nome": "Frajola",
+      "especie": "Gato",
+      "raca": "",
+      "idade": "7",
+      "porte": "Pequeno",
+      "sexo": "Masculino",
+      "pelagem": "Preto e branco",
+      "vacinado": "Sim",
+      "vermifugado": "Sim",
+      "id": "5YQm4kG0xtY"
+    },
+    {
+      "nome": "Garfield",
+      "especie": "Gato",
+      "raca": "Persa",
+      "idade": "8",
+      "porte": "Pequeno",
+      "sexo": "Masculino",
+      "pelagem": "Laranja",
+      "vacinado": "Sim",
+      "vermifugado": "Sim",
+      "id": "myVI6y65vPE"
+    },
+    {
+      "nome": "Jerry",
+      "especie": "Rato",
+      "raca": "",
+      "idade": "2",
+      "porte": "Pequeno",
+      "sexo": "Masculino",
+      "pelagem": "Marrom",
+      "vacinado": "Não",
+      "vermifugado": "Não",
+      "id": "D0n6KgSbpKc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

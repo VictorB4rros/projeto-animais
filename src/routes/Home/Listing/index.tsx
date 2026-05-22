@@ -2,7 +2,6 @@ import './styles.css';
 import editIcon from '../../../assets/edit.svg';
 import deleteIcon from '../../../assets/delete.svg';
 import { useEffect, useState } from 'react';
-import DialogInfo from '../../../components/DialogInfo';
 import DialogConfirmation from '../../../components/DialogConfirmation';
 import ButtonInverse from '../../../components/ButtonInverse';
 import { useNavigate } from 'react-router-dom';
@@ -13,15 +12,10 @@ export default function Listing() {
 
     const navigate = useNavigate();
 
-    const [dialogInfoData, setDialogInfoData] = useState({
-        visible: false,
-        message: 'Operação com sucesso!'
-    });
-
     const [dialogConfirmationData, setDialogConfirmationData] = useState({
         visible: false,
         id: '',
-        message: 'Tem certeza?'
+        message: 'Tem certeza de que deseja excluir esse bichinho?'
     });
 
     const [animals, setAnimals] = useState<AnimalDTO[]>([]);
@@ -40,10 +34,6 @@ export default function Listing() {
         navigate("/animais/create");
     }
 
-    function handleDialogInfoClose() {
-        setDialogInfoData({ ...dialogInfoData, visible: false });
-    }
-
     function handleDeleteClick(animalId: string) {
         setDialogConfirmationData({ ...dialogConfirmationData, id: animalId, visible: true });
     }
@@ -58,15 +48,8 @@ export default function Listing() {
                 .then(() => {
                     setAnimals([]);
                     setRefreshKey(prev => prev + 1);
-                })
-                .catch(error => {
-                    setDialogInfoData({
-                        visible: true,
-                        message: error.response.data.error
-                    })
                 });
         }
-
         setDialogConfirmationData({ ...dialogConfirmationData, visible: false });
     }
 
@@ -85,32 +68,35 @@ export default function Listing() {
                 <table className="table mb20 mt20">
                     <thead>
                         <tr>
-                            <th className="txt-left">Nome</th>
-                            <th className="txt-left">Espécie</th>
-                            <th className="txt-left">Raça</th>
-                            <th className="txt-left">Idade</th>
-                            <th className="txt-left">Porte</th>
-                            <th className="txt-left">Sexo</th>
-                            <th className="txt-left">Pelagem</th>
-                            <th className="txt-left">Vacinado</th>
-                            <th className="txt-left">Vermifugado</th>
+                            <th className="txt-center">Nome</th>
+                            <th className="txt-center">Espécie</th>
+                            <th className="txt-center">Raça</th>
+                            <th className="txt-center">Idade</th>
+                            <th className="txt-center">Porte</th>
+                            <th className="txt-center">Sexo</th>
+                            <th className="txt-center">Pelagem</th>
+                            <th className="txt-center">Vacinado</th>
+                            <th className="txt-center">Vermifugado</th>
+                            <th className="txt-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             animals.map(animal => (
                                 <tr key={animal.id}>
-                                    <td className="txt-left">{animal.nome}</td>
-                                    <td className="txt-left">{animal.especie}</td>
-                                    <td className="txt-left">{animal.raca}</td>
-                                    <td className="txt-left">{animal.idade}</td>
-                                    <td className="txt-left">{animal.porte}</td>
-                                    <td className="txt-left">{animal.sexo}</td>
-                                    <td className="txt-left">{animal.pelagem}</td>
-                                    <td className="txt-left">{animal.vacinado}</td>
-                                    <td className="txt-left">{animal.vermifugado}</td>
-                                    <td><img onClick={() => handleUpdateClick(animal.id)} className="animal-listing-btn" src={editIcon} alt="Editar" /></td>
-                                    <td><img onClick={() => handleDeleteClick(animal.id)} className="animal-listing-btn" src={deleteIcon} alt="Deletar" /></td>
+                                    <td className="txt-center">{animal.nome}</td>
+                                    <td className="txt-center">{animal.especie}</td>
+                                    <td className="txt-center">{animal.raca}</td>
+                                    <td className="txt-center">{animal.idade}</td>
+                                    <td className="txt-center">{animal.porte}</td>
+                                    <td className="txt-center">{animal.sexo}</td>
+                                    <td className="txt-center">{animal.pelagem}</td>
+                                    <td className="txt-center">{animal.vacinado}</td>
+                                    <td className="txt-center">{animal.vermifugado}</td>
+                                    <td>
+                                        <img onClick={() => handleUpdateClick(animal.id)} className="animal-listing-btn" src={editIcon} alt="Editar" />
+                                        <img onClick={() => handleDeleteClick(animal.id)} className="animal-listing-btn" src={deleteIcon} alt="Deletar" />
+                                    </td>
                                 </tr>
                             ))
                         }
@@ -118,14 +104,6 @@ export default function Listing() {
                 </table>
 
             </section>
-
-            {
-                dialogInfoData.visible &&
-                <DialogInfo
-                    message={dialogInfoData.message}
-                    onDialogClose={handleDialogInfoClose}
-                />
-            }
 
             {
                 dialogConfirmationData.visible &&
